@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import AppBar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
@@ -18,15 +18,14 @@ export default function MemoListScreen() {
             <MemoList />
 
             {/* Circle Button */}
-            <CircleButton>+</CircleButton>
-
+            <CircleButton name='plus'/>               
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#F0F4F8',
+        flex: 1,
+        backgroundColor: '#F0F4F8',
     },
-  });
+});
