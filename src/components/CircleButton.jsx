@@ -1,24 +1,29 @@
 import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
-import { string } from 'prop-types';
+import { shape, string } from 'prop-types';
 
 export default function CircleButton(props) {
-    const {children} = props;
+    // styleの上書きをする場合、const{style} とする
+    const {children ,style} = props;
     return (
-        <View style={styles.circleButton}>
+        // スタイルの設定を配列で受け取る
+        <View style={[styles.circleButton, style]}>
             <Text style={styles.circleButtonLabel}>{children}</Text>
         </View>
     );
 }
 
 CircleButton.prototypes = {
+    // 引数を必須にするときは、isRequired とする
     children: string.isRequired,
+    style: shape(),
 };
 
-// �f�t�H���g�l��ݒ肷��Ƃ� 
-// CircleButton.defultProps = {
+// デフォルト値を設定するとき 
+CircleButton.defultProps = {
 //     children: '',
-// }
+    style: null,
+}
 
 const styles = StyleSheet.create({
     circleButton: {
