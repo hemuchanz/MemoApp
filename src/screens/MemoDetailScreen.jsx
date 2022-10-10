@@ -16,6 +16,8 @@ export default function MemoDetailScreen() {
                     <Text style={styles.memoText}>
                         買い物リスト
                         あいうえおかきくけこさしすせそたちつてと
+                        あいうえおかきくけこさしすせそたちつてと
+                        あいうえおかきくけこさしすせそたちつてと
                     </Text>
                 </ScrollView>
             </View>
