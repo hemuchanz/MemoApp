@@ -10,7 +10,7 @@ import SignUpSreen from './src/screens/SignUpScreen';
 
 export default function App() {
   return (
-    <SignUpSreen />
+    <MemoListScreen />
   );
 }
 

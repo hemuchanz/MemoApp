@@ -1,18 +1,18 @@
 import React from "react";
-import { StyleSheet, View } from 'react-native';
-import { shape, string } from 'prop-types';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import { func, shape, string } from 'prop-types';
 import { Feather } from '@expo/vector-icons'; 
 
 export default function CircleButton(props) {
     // styleの上書きをする場合、const{style} とする
-    const {style, name} = props;
+    const {style, name, onPress} = props;
     return (
         // スタイルの設定を配列で受け取る
-        <View style={[styles.circleButton, style]}>
+        <TouchableOpacity style={[styles.circleButton, style]} onPress={onPress}>
             {/* nameプロパティでいろんなアイコンを表示できる。 */}
             <Feather name={name} size={27} color="white" />
             {/* <Text style={styles.circleButtonLabel}>{children}</Text> */}
-        </View>
+        </TouchableOpacity>
     );
 }
 
@@ -20,6 +20,7 @@ CircleButton.prototypes = {
     // 引数を必須にするときは、isRequired とする
     style: shape(),
     name: string.isRequired,
+    onPress: func,
 };
 
 // デフォルト値を設定するとき 
